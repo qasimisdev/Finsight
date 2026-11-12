@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinSight</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.35.2/plotly.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="brand">FinSight <span>AI stock market assistant</span></div>
+    <div id="status" class="status" title="Backend status">checking...</div>
+  </header>
+
+  <main>
+    <div id="chat" class="chat">
+      <div class="msg assistant">
+        <div class="bubble">
+          <p>Ask about any stock: technical analysis, fundamentals, comparisons or what-if scenarios.</p>
+          <p class="muted">Educational analysis, not financial advice. Answers list sources and assumptions.</p>
+          <div class="chips" id="chips"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <form id="form" autocomplete="off">
+      <input id="input" type="text" placeholder="e.g. Compare AAPL and MSFT over 1 year" maxlength="4000" required>
+      <button id="send" type="submit">Send</button>
+    </form>
+    <label class="bg">
+      <input type="checkbox" id="bg"> Run as background job (Celery worker, shows progress)
+    </label>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
