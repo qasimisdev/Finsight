@@ -1,4 +1,4 @@
-   """Tool schemas shown to the model, plus the dispatcher (the harness permission layer)."""
+"""Tool schemas shown to the model, plus the dispatcher (the harness permission layer)."""
 from __future__ import annotations
 
 import os
